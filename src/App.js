@@ -20,6 +20,8 @@ import Services from "./pages/Services";
 import { ThemeProvider } from "@mui/material";
 import PostDetails from "./pages/PostDetails";
 
+const BASE_URL = "/bloom-media-react-app";
+
 const PrivateRoute = (props) => {
   const { isUserAuthenticated } = props;
   return isUserAuthenticated ? (
@@ -28,7 +30,7 @@ const PrivateRoute = (props) => {
       <Outlet />
     </>
   ) : (
-    <Navigate replace to="/login" />
+    <Navigate replace to={`${BASE_URL}/login`} />
   );
 };
 
@@ -49,18 +51,18 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route
-              path="/login"
+              path={`${BASE_URL}login`}
               element={
                 <Account setIsUserAuthenticated={setIsUserAuthenticated} />
               }
             />
-            <Route path="/" element={<PublicRoute />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/post/:id" element={<PostDetails />} />
+            <Route path={`${BASE_URL}/`} element={<PublicRoute />}>
+              <Route path={`${BASE_URL}/`} element={<Home />} />
+              <Route path={`${BASE_URL}/about`} element={<About />} />
+              <Route path={`${BASE_URL}/services`} element={<Services />} />
+              <Route path={`${BASE_URL}/blog`} element={<Blog />} />
+              <Route path={`${BASE_URL}/contact`} element={<Contact />} />
+              <Route path={`${BASE_URL}/post/:id`} element={<PostDetails />} />
             </Route>
             <Route
               path="/create-post"
