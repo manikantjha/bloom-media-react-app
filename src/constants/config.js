@@ -51,3 +51,5 @@ export const SERVICE_URLS = {
     query: true,
   },
 };
+
+export const BASE_URL = "/bloom-media-react-app";

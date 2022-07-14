@@ -9,13 +9,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../constants/config";
 
 const pages = [
-  { link: "/", page: "Home" },
-  { link: "/about", page: "About" },
-  { link: "/services", page: "Services" },
-  { link: "/blog", page: "Blog" },
-  { link: "/contact", page: "Contact" },
+  { link: `${BASE_URL}/`, page: "Home" },
+  { link: `${BASE_URL}/about`, page: "About" },
+  { link: `${BASE_URL}/services`, page: "Services" },
+  { link: `${BASE_URL}/blog`, page: "Blog" },
+  { link: `${BASE_URL}/contact`, page: "Contact" },
 ];
 
 const Navbar = () => {
