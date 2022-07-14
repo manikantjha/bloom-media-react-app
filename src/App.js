@@ -21,6 +21,8 @@ import { ThemeProvider } from "@mui/material";
 import PostDetails from "./pages/PostDetails";
 import { BASE_URL } from "./constants/config";
 
+const BASE_URL = "/bloom-media-react-app";
+
 const PrivateRoute = (props) => {
   const { isUserAuthenticated } = props;
   return isUserAuthenticated ? (
