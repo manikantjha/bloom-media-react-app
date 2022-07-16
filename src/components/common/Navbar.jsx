@@ -47,7 +47,7 @@ const Navbar = () => {
           sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
         >
           <img
-            src="/bloom-media-react-app/bloom-media-logo-white.svg"
+            src="/bloom-media-react-app/logo.svg"
             alt="logo"
             style={{ width: "100px", height: "auto" }}
           />
