@@ -1,21 +1,22 @@
 import { Box, styled } from "@mui/material";
 
-export const ContactWrapper = styled(Box)`
-  height: 500px;
-  /* width: 100%; */
-  overflow: hidden;
-  background-color: #424242;
-  padding: 32px;
-  .title {
-    color: #ffffff;
-    margin-bottom: 32px;
-    font-weight: bold;
-    font-size: 6rem;
-  }
-  overflow: hidden;
-  .home-hero {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
+export const ContactWrapper = styled(Box)(({ theme }) => ({
+  backgroundColor: "#424242",
+  padding: theme.spacing(4),
+  "& .form-wrapper": {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  "& .form-wrapper .form-inner-wrapper": {
+    width: "50%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(2),
+    "& .form-wrapper .form-inner-wrapper": {
+      width: "100%",
+    },
+  },
+}));

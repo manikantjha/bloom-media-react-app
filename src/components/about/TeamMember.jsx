@@ -11,7 +11,9 @@ export default function TeamMember() {
           alt="member"
         />
       </div>
-      <Typography variant="subtitle1">Name</Typography>
+      <Typography variant="subtitle1" className="team-member-name">
+        Name
+      </Typography>
       <Typography variant="body1">Designation</Typography>
     </TeamMemberWrapper>
   );

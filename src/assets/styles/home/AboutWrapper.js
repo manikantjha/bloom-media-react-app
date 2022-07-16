@@ -1,16 +1,12 @@
 import { Box, styled } from "@mui/material";
 
-export const AboutWrapper = styled(Box)`
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-  background-color: #212121;
-  position: relative;
-  .about-content {
-    position: absolute;
-    color: #ffffff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-`;
+export const AboutWrapper = styled(Box)(({ theme }) => ({
+  height: "600px",
+  width: "100%",
+  overflow: "hidden",
+  backgroundColor: theme.palette.secondary.main,
+  position: "relative",
+  [theme.breakpoints.down("md")]: {
+    height: "500px",
+  },
+}));

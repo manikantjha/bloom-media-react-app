@@ -1,4 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -15,12 +16,13 @@ const pages = [
   { link: `${BASE_URL}/`, page: "Home" },
   { link: `${BASE_URL}/about`, page: "About" },
   { link: `${BASE_URL}/services`, page: "Services" },
-  { link: `${BASE_URL}/blog`, page: "Blog" },
+  // { link: `${BASE_URL}/blog`, page: "Blog" },
   { link: `${BASE_URL}/contact`, page: "Contact" },
 ];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const theme = useTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -31,14 +33,21 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#ffffff", zIndex: 1000 }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        bgcolor: theme.palette.secondary.main,
+        color: `${theme.palette.primary.main} !important`,
+        zIndex: 1000,
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
           sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
         >
           <img
-            src="./bloom-media-logo.svg"
+            src="/bloom-media-react-app/bloom-media-logo-white.svg"
             alt="logo"
             style={{ width: "100px", height: "auto" }}
           />
@@ -56,7 +65,7 @@ const Navbar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "white" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -73,13 +82,29 @@ const Navbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none", ml: 2 },
+                display: {
+                  xs: "block",
+                  md: "none",
+                  ml: 2,
+                  "& .MuiMenu-paper": {
+                    backgroundColor: "#424242",
+                    minWidth: 200,
+                  },
+                },
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page.page} onClick={handleCloseNavMenu}>
                   <Link to={page.link}>
-                    <Typography textAlign="center">{page.page}</Typography>
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        textDecoration: "none !important",
+                        color: "white !important",
+                      }}
+                    >
+                      {page.page}
+                    </Typography>
                   </Link>
                 </MenuItem>
               ))}
@@ -95,7 +120,12 @@ const Navbar = () => {
                 <Typography
                   variant="subtitle1"
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "black", display: "block", mr: 4 }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    mr: 4,
+                  }}
                 >
                   {page.page}
                 </Typography>
