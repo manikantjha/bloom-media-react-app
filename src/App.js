@@ -20,6 +20,8 @@ import Services from "./pages/Services";
 import { ThemeProvider } from "@mui/material";
 import PostDetails from "./pages/PostDetails";
 import { BASE_URL } from "./constants/config";
+import Work from "./pages/Work";
+import Footer from "./components/common/Footer";
 
 const PrivateRoute = (props) => {
   const { isUserAuthenticated } = props;
@@ -38,6 +40,7 @@ const PublicRoute = (props) => {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 };
@@ -47,7 +50,7 @@ function App() {
   return (
     <DataProvider>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename={`${BASE_URL}`}>
           <Routes>
             <Route
               path={`${BASE_URL}login`}
@@ -59,6 +62,7 @@ function App() {
               <Route path={`${BASE_URL}/`} element={<Home />} />
               <Route path={`${BASE_URL}/about`} element={<About />} />
               <Route path={`${BASE_URL}/services`} element={<Services />} />
+              <Route path={`${BASE_URL}/work`} element={<Work />} />
               <Route path={`${BASE_URL}/blog`} element={<Blog />} />
               <Route path={`${BASE_URL}/contact`} element={<Contact />} />
               <Route path={`${BASE_URL}/post/:id`} element={<PostDetails />} />

@@ -26,8 +26,13 @@ export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
   },
   "& .service-title-action button": {
     marginTop: theme.spacing(2),
-    borderRadius: theme.spacing(4),
     textTransform: "capitalize",
+    background: `
+      linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.75)) padding-box, 
+      linear-gradient(45deg, #2d9599, #a7226e, #ec2848, #f26b37, #f7db4e) border-box`,
+    borderRadius: "50em",
+    border: "2px solid transparent",
+    color: "white",
   },
   "& .overlay": {
     position: "absolute",

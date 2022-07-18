@@ -40,5 +40,8 @@ export const BtnWrapper = styled(Box)(({ theme }) => ({
     fontWeight: "bold",
     borderRadius: theme.spacing(4),
     minWidth: 130,
+    backgroundImage:
+      "linear-gradient(45deg, #2d9599, #a7226e, #ec2848, #f26b37, #f7db4e)",
+    color: "white",
   },
 }));

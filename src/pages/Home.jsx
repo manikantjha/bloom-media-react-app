@@ -13,8 +13,8 @@ export default function Home() {
         heroTitle="Bloom Media"
         heroDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur impedit quisquam similique quis voluptatibus pariatur porro iure ratione iusto officia distinctio libero delectus odit, quibusdam dolores inventore, atque optio veritatis."
         btnText="Lets Talk"
+        isHome
       />
-
       <About
         aboutTitle="About Bloom Media"
         aboutShortDescription="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, maxime!"

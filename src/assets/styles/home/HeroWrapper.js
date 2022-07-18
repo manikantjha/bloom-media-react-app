@@ -42,6 +42,10 @@ export const HeroWrapper = styled(Box)(({ theme }) => ({
     fontWeight: "bold",
     borderRadius: theme.spacing(4),
     textTransform: "capitalize",
+    // backgroundImage: "linear-gradient(45deg, #fbe555, #40c4ff)",
+    backgroundImage:
+      "linear-gradient(45deg, #2d9599, #a7226e, #ec2848, #f26b37, #f7db4e)",
+    color: "white",
   },
   // Tablet View Adjustments
   [theme.breakpoints.down("md")]: {

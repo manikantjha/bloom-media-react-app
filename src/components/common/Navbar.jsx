@@ -16,6 +16,7 @@ const pages = [
   { link: `${BASE_URL}/`, page: "Home" },
   { link: `${BASE_URL}/about`, page: "About" },
   { link: `${BASE_URL}/services`, page: "Services" },
+  { link: `${BASE_URL}/work`, page: "Work" },
   // { link: `${BASE_URL}/blog`, page: "Blog" },
   { link: `${BASE_URL}/contact`, page: "Contact" },
 ];
@@ -95,7 +96,15 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.page} onClick={handleCloseNavMenu}>
-                  <Link to={page.link}>
+                  <Link
+                    to={page.link}
+                    sx={{
+                      textDecoration: "none !important",
+                      "&:active": {
+                        textDecoration: "none !important",
+                      },
+                    }}
+                  >
                     <Typography
                       textAlign="center"
                       sx={{

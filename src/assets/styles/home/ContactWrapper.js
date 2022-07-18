@@ -9,14 +9,14 @@ export const ContactWrapper = styled(Box)(({ theme }) => ({
     alignItems: "center",
   },
   "& .form-wrapper .form-inner-wrapper": {
-    width: "50%",
+    // width: "50%",
     display: "flex",
     flexDirection: "column",
   },
   [theme.breakpoints.down("md")]: {
     padding: theme.spacing(2),
     "& .form-wrapper .form-inner-wrapper": {
-      width: "100%",
+      // width: "100%",
     },
   },
 }));
