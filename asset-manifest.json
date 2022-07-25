@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bloom-media-react-app/static/css/main.e6c13ad2.css",
-    "main.js": "/bloom-media-react-app/static/js/main.6a774040.js",
+    "main.js": "/bloom-media-react-app/static/js/main.db202fc1.js",
     "static/js/787.c4e7f8f9.chunk.js": "/bloom-media-react-app/static/js/787.c4e7f8f9.chunk.js",
     "index.html": "/bloom-media-react-app/index.html",
     "main.e6c13ad2.css.map": "/bloom-media-react-app/static/css/main.e6c13ad2.css.map",
-    "main.6a774040.js.map": "/bloom-media-react-app/static/js/main.6a774040.js.map",
+    "main.db202fc1.js.map": "/bloom-media-react-app/static/js/main.db202fc1.js.map",
     "787.c4e7f8f9.chunk.js.map": "/bloom-media-react-app/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6a774040.js"
+    "static/js/main.db202fc1.js"
   ]
 }
