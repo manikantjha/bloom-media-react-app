@@ -5,7 +5,27 @@ import { HeroWrapper } from "../../assets/styles/home/HeroWrapper";
 import { BASE_URL } from "../../constants/config";
 
 export default function Hero(props) {
-  const { heroTitle, heroDescription, btnText, heroImg, isHome } = props;
+  const { heroTitle, heroDescription, btnText, heroImg, isHome, noBtn } = props;
+
+  function renderButton() {
+    if (noBtn) return;
+    if (isHome)
+      return (
+        <a href="#contact-home" style={{ textDecoration: "none" }}>
+          <Button variant="contained" size="large">
+            {btnText}
+          </Button>
+        </a>
+      );
+    return (
+      <Link to={`${BASE_URL}/contact`} style={{ textDecoration: "none" }}>
+        <Button variant="contained" size="large">
+          {btnText}
+        </Button>
+      </Link>
+    );
+  }
+
   return (
     <HeroWrapper>
       <img className="home-hero" src={heroImg} alt="hero" />
@@ -18,20 +38,8 @@ export default function Hero(props) {
           <Typography variant="body1" className="messageDescription">
             {heroDescription}
           </Typography>
-          {isHome ? (
-            <a href="#contact-home" style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="large">
-                {btnText}
-              </Button>
-            </a>
-          ) : (
-            <Link to={`${BASE_URL}/contact`} style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="large">
-                {btnText}
-              </Button>
-            </Link>
-          )}
         </Container>
+        {renderButton()}
       </Box>
     </HeroWrapper>
   );

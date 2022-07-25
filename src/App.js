@@ -22,6 +22,7 @@ import PostDetails from "./pages/PostDetails";
 import { BASE_URL } from "./constants/config";
 import Work from "./pages/Work";
 import Footer from "./components/common/Footer";
+import WorkDetails from "./pages/WorkDetails";
 
 const PrivateRoute = (props) => {
   const { isUserAuthenticated } = props;
@@ -58,14 +59,15 @@ function App() {
                 <Account setIsUserAuthenticated={setIsUserAuthenticated} />
               }
             />
-            <Route path={`${BASE_URL}/`} element={<PublicRoute />}>
-              <Route path={`${BASE_URL}/`} element={<Home />} />
-              <Route path={`${BASE_URL}/about`} element={<About />} />
-              <Route path={`${BASE_URL}/services`} element={<Services />} />
-              <Route path={`${BASE_URL}/work`} element={<Work />} />
-              <Route path={`${BASE_URL}/blog`} element={<Blog />} />
-              <Route path={`${BASE_URL}/contact`} element={<Contact />} />
-              <Route path={`${BASE_URL}/post/:id`} element={<PostDetails />} />
+            <Route path={`/`} element={<PublicRoute />}>
+              <Route path={`/`} element={<Home />} />
+              <Route path={`/about`} element={<About />} />
+              <Route path={`/services`} element={<Services />} />
+              <Route path={`/work`} element={<Work />} />
+              <Route path={`/work/:id`} element={<WorkDetails />} />
+              <Route path={`/blog`} element={<Blog />} />
+              <Route path={`/contact`} element={<Contact />} />
+              <Route path={`/post/:id`} element={<PostDetails />} />
             </Route>
             <Route
               path="/create-post"
