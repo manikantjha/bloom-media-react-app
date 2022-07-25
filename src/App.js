@@ -5,6 +5,7 @@ import {
   Outlet,
   Route,
   Routes,
+  HashRouter,
 } from "react-router-dom";
 import DataProvider from "./contexts/DataProvider";
 import theme from "./theme/theme";
@@ -51,7 +52,7 @@ function App() {
   return (
     <DataProvider>
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename={`${BASE_URL}`}>
+        <HashRouter basename={`${BASE_URL}`}>
           <Routes>
             <Route
               path={`${BASE_URL}login`}
@@ -78,7 +79,7 @@ function App() {
               <Route path="/create-post" element={<CreatePost />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </DataProvider>
   );
