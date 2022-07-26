@@ -1,9 +1,11 @@
 import { Box, styled } from "@mui/material";
 
 export const ServicesWrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: "#424242",
-  padding: theme.spacing(4),
+  backgroundColor: theme.palette.secondary.main,
+  paddingLeft: theme.spacing(6),
+  paddingRight: theme.spacing(6),
   [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
   },
 }));

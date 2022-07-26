@@ -1,5 +1,6 @@
 import { Grid, useTheme, useMediaQuery } from "@mui/material";
 import React from "react";
+import { SectionWrapper } from "../assets/styles/CommonStyles";
 import { ServicesWrapper } from "../assets/styles/home/ServicesWrapper";
 import Hero from "../components/common/Hero";
 import ServiceCard from "../components/home/ServiceCard";
@@ -15,14 +16,16 @@ export default function Services() {
         heroDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur impedit quisquam similique quis voluptatibus pariatur porro iure ratione iusto officia distinctio libero delectus odit, quibusdam dolores inventore, atque optio veritatis."
         btnText="Lets Talk"
       />
-      <ServicesWrapper>
-        <Grid container spacing={isTablet ? 2 : 4}>
-          {[...Array(12)].map((item, index) => (
-            <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
-              <ServiceCard />
-            </Grid>
-          ))}
-        </Grid>
+      <ServicesWrapper sx={{ bgcolor: theme.palette.secondary.light }}>
+        <SectionWrapper>
+          <Grid container spacing={isTablet ? 2 : 4}>
+            {[...Array(12)].map((item, index) => (
+              <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
+                <ServiceCard />
+              </Grid>
+            ))}
+          </Grid>
+        </SectionWrapper>
       </ServicesWrapper>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Box, Container, Grid, List, ListItem } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { FooterWrapper } from "../../assets/styles/footer/FooterWrapper";
 import { BASE_URL } from "../../constants/config";
@@ -6,10 +6,17 @@ import { BASE_URL } from "../../constants/config";
 export default function Footer() {
   return (
     <FooterWrapper>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ mb: 6 }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={3}>
-            <Box sx={{ height: "60px", overflow: "hidden" }}>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: { xs: "45px", md: "60px" },
+                overflow: "hidden",
+                display: "flex",
+                justifyContent: { xs: "center", md: "flex-start" },
+              }}
+            >
               <img
                 src={`${BASE_URL}/logo.svg`}
                 alt="logo"
@@ -17,25 +24,67 @@ export default function Footer() {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={3}></Grid>
-          <Grid item xs={12} md={3}>
+          {/* <Grid item xs={12} md={3}></Grid> */}
+          {/* <Grid item xs={12} md={3}>
             <List sx={{ color: "white" }}>
-              <ListItem>Home</ListItem>
-              <ListItem>About</ListItem>
-              <ListItem>Services</ListItem>
-              <ListItem>Work</ListItem>
-              <ListItem>Contact</ListItem>
+              <ListItem>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  Home
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  About
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  Services
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  Work
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+                  Contact
+                </Link>
+              </ListItem>
             </List>
-          </Grid>
-          <Grid item xs={12} md={3}>
+          </Grid> */}
+          {/* <Grid item xs={12} md={3}>
             <List sx={{ color: "white" }}>
               <ListItem>bloommedia@gmail.com</ListItem>
-              <ListItem>+91 55555 55555</ListItem>
-              <ListItem>Ahmedabad, India, xxxxxx</ListItem>
+              <ListItem>+91 12345 54321</ListItem>
+              <ListItem>Ahmedabad, India, 320008</ListItem>
             </List>
+          </Grid> */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: { xs: "center", md: "flex-end" },
+              }}
+            >
+              <Box>
+                <Typography variant="body1" color="white" sx={{ mt: 4 }}>
+                  Copyright &copy; Bloom Media 2022
+                </Typography>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>
+      {/* <Divider sx={{ borderColor: "#424242" }} />
+      <Container maxWidth="xl">
+        <Box>
+          <Typography variant="body1" color="white" sx={{ mt: 4 }}>
+            &copy;Bloom Media - 2022
+          </Typography>
+        </Box>
+      </Container> */}
     </FooterWrapper>
   );
 }

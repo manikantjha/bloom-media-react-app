@@ -21,9 +21,9 @@ export const HeroWrapper = styled(Box)(({ theme }) => ({
   "& .hero-message": {
     color: "white",
     position: "absolute",
-    left: "15%",
+    // left: "15%",
     top: "50%",
-    transform: "translate(-15%, -50%)",
+    transform: "translateY(-50%)",
     width: "40%",
     // textAlign: "center",
   },

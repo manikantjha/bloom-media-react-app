@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 
 export const SectionTitleWrapper = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(6),
-  marginBottom: theme.spacing(6),
+  marginBottom: theme.spacing(12),
   "& .title": {
     color: "#ffffff",
     textAlign: "center",
@@ -15,6 +15,7 @@ export const SectionTitleWrapper = styled(Box)(({ theme }) => ({
     fontSize: "1.25rem",
     fontWeight: "light",
   },
+  // Tablet
   [theme.breakpoints.down("md")]: {
     "& .title": {
       fontSize: "1.75rem",
@@ -44,4 +45,9 @@ export const BtnWrapper = styled(Box)(({ theme }) => ({
       "linear-gradient(45deg, #2d9599, #a7226e, #ec2848, #f26b37, #f7db4e)",
     color: "white",
   },
+}));
+
+export const SectionWrapper = styled(Box)(({ theme }) => ({
+  paddingTop: theme.spacing(6),
+  paddingBottom: theme.spacing(6),
 }));

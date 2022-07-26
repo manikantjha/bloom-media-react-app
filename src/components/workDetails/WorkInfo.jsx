@@ -40,19 +40,23 @@ function WorkInfoAccordion(props) {
         border: "none",
         borderTopLeftRadius: `16px !important`,
         borderTopRightRadius: `16px !important`,
+        borderBottomLeftRadius: `16px !important`,
+        borderBottomRightRadius: `16px !important`,
+        color: "white",
+        mb: 2,
       }}
     >
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        sx={
-          {
-            // overflow: "hidden",
-          }
-        }
-      >
+      <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}>
         <Typography variant="h6">{item.title}</Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{ bgcolor: "#232020", color: "#ffffff" }}>
+      <AccordionDetails
+        sx={{
+          bgcolor: "#232020",
+          color: "#ffffff",
+          borderBottomLeftRadius: `16px !important`,
+          borderBottomRightRadius: `16px !important`,
+        }}
+      >
         <Typography variant="body1">{item.description}</Typography>
       </AccordionDetails>
     </Accordion>

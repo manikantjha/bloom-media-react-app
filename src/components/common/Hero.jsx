@@ -1,8 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 import React from "react";
+import { Link } from "react-router-dom";
 import { HeroWrapper } from "../../assets/styles/home/HeroWrapper";
-import { BASE_URL } from "../../constants/config";
 
 export default function Hero(props) {
   const { heroTitle, heroDescription, btnText, heroImg, isHome, noBtn } = props;
@@ -11,14 +10,17 @@ export default function Hero(props) {
     if (noBtn) return;
     if (isHome)
       return (
-        <a href="#contact-home" style={{ textDecoration: "none" }}>
-          <Button variant="contained" size="large">
-            {btnText}
-          </Button>
-        </a>
+        // <a
+        //   // href="#contact-home"
+        //   style={{ textDecoration: "none" }}
+        // >
+        <Button variant="contained" size="large">
+          {btnText}
+        </Button>
+        // </a>
       );
     return (
-      <Link to={`${BASE_URL}/contact`} style={{ textDecoration: "none" }}>
+      <Link to={`/contact`} style={{ textDecoration: "none" }}>
         <Button variant="contained" size="large">
           {btnText}
         </Button>
@@ -30,17 +32,17 @@ export default function Hero(props) {
     <HeroWrapper>
       <img className="home-hero" src={heroImg} alt="hero" />
       <Box className="image-overlay" />
-      <Box className="hero-message">
-        <Container maxWidth="xl">
+      <Container maxWidth="xl">
+        <Box className="hero-message">
           <Typography variant="h2" className="messageTitle">
             {heroTitle}
           </Typography>
           <Typography variant="body1" className="messageDescription">
             {heroDescription}
           </Typography>
-        </Container>
-        {renderButton()}
-      </Box>
+          {renderButton()}
+        </Box>
+      </Container>
     </HeroWrapper>
   );
 }

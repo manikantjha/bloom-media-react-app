@@ -1,5 +1,6 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
+import { SectionWrapper } from "../assets/styles/CommonStyles";
 import { WorkWrapper } from "../assets/styles/home/WorkWrapper";
 import Hero from "../components/common/Hero";
 import WorkCard from "../components/home/WorkCard";
@@ -16,13 +17,15 @@ export default function Work() {
         btnText="Lets Talk"
       />
       <WorkWrapper>
-        <Grid container spacing={isTablet ? 2 : 4}>
-          {[...Array(12)].map((item, index) => (
-            <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
-              <WorkCard />
-            </Grid>
-          ))}
-        </Grid>
+        <SectionWrapper>
+          <Grid container spacing={isTablet ? 2 : 4}>
+            {[...Array(12)].map((item, index) => (
+              <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
+                <WorkCard item={item} index={index} />
+              </Grid>
+            ))}
+          </Grid>
+        </SectionWrapper>
       </WorkWrapper>
     </div>
   );
