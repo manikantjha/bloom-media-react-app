@@ -1,7 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { FooterWrapper } from "../../assets/styles/footer/FooterWrapper";
-import { BASE_URL } from "../../constants/config";
 
 export default function Footer() {
   return (
@@ -18,7 +17,7 @@ export default function Footer() {
               }}
             >
               <img
-                src={`${BASE_URL}/logo.svg`}
+                src={`/logo.svg`}
                 alt="logo"
                 style={{ height: "100%", objectFit: "cover" }}
               />

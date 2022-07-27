@@ -51,7 +51,7 @@ function App() {
   return (
     <DataProvider>
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename={`${BASE_URL}`}>
+        <BrowserRouter>
           <Routes>
             <Route
               path={`${BASE_URL}login`}
