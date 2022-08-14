@@ -2,10 +2,10 @@ import { Box, styled } from "@mui/material";
 
 export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.spacing(2),
+  borderRadius: theme.spacing(0),
   overflow: "hidden",
   "& .service-image-wrapper": {
-    height: 400,
+    height: 800,
     width: "100%",
     backgroundColor: "#bdbdbd",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
@@ -41,7 +41,7 @@ export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
     right: 0,
     bottom: 0,
     backgroundImage:
-      "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.65))",
+      "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.85))",
   },
   [theme.breakpoints.down("xl")]: {
     "& .service-image-wrapper": {

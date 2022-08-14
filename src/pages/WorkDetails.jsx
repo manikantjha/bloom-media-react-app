@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../components/common/Hero";
+import WorkImages from "../components/workDetails/WorkImages";
 import WorkInfo from "../components/workDetails/WorkInfo";
 export default function WorkDetails() {
   return (
@@ -13,6 +14,7 @@ export default function WorkDetails() {
         noBtn
       />
       <WorkInfo />
+      <WorkImages />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { SectionWrapper } from "../assets/styles/CommonStyles";
 import { ServicesWrapper } from "../assets/styles/home/ServicesWrapper";
 import Hero from "../components/common/Hero";
 import ServiceCard from "../components/home/ServiceCard";
+import { services } from "../data/services";
 
 export default function Services() {
   const theme = useTheme();
@@ -17,11 +18,11 @@ export default function Services() {
         btnText="Lets Talk"
       />
       <ServicesWrapper sx={{ bgcolor: theme.palette.secondary.light }}>
-        <SectionWrapper>
+        <SectionWrapper sx={{ px: { xs: 2, md: 10 } }}>
           <Grid container spacing={isTablet ? 2 : 4}>
-            {[...Array(12)].map((item, index) => (
+            {services.map((item, index) => (
               <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
-                <ServiceCard />
+                <ServiceCard item={item} index={index} />
               </Grid>
             ))}
           </Grid>

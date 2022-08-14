@@ -17,7 +17,7 @@ export default function Work() {
         btnText="Lets Talk"
       />
       <WorkWrapper>
-        <SectionWrapper>
+        <SectionWrapper sx={{ px: { xs: 2, md: 10 } }}>
           <Grid container spacing={isTablet ? 2 : 4}>
             {[...Array(12)].map((item, index) => (
               <Grid item key={index} xs={6} sm={4} md={4} lg={3}>

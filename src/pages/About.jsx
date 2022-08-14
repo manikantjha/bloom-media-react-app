@@ -15,7 +15,9 @@ export default function About() {
       <AboutDetails
         aboutTitle="About Bloom Media"
         aboutShortDescription="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, ea?"
+        aboutDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur inventore sint animi porro sed perferendis, cupiditate, autem assumenda quo enim, adipisci praesentium. Vitae, maxime fugiat. Eum explicabo ullam, a animi ut repudiandae debitis odio! Impedit maxime necessitatibus dolor ullam ipsum error expedita aut quia, sapiente optio nesciunt ipsam iure quis."
       />
+
       <Team />
     </div>
   );

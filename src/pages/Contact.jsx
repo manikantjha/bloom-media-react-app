@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/common/Hero";
-import ContactSection from "../components/home/Contact";
+import ContactSection from "../components/home/ContactSection";
 
 export default function Contact() {
   return (

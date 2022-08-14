@@ -11,20 +11,12 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-// const pages = [
-//   { link: `/`, page: "Home" },
-//   { link: `/about`, page: "About" },
-//   { link: `/services`, page: "Services" },
-//   { link: `/work`, page: "Work" },
-//   { link: `/contact`, page: "Contact" },
-// ];
-
 const pages = [
   { link: `/`, page: "Home" },
-  { link: `/`, page: "About" },
-  { link: `/`, page: "Services" },
-  { link: `/`, page: "Work" },
-  { link: `/`, page: "Contact" },
+  { link: `/about`, page: "About" },
+  { link: `/services`, page: "Services" },
+  { link: `/work`, page: "Work" },
+  { link: `/contact`, page: "Contact" },
 ];
 
 const Navbar = () => {

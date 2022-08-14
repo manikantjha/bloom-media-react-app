@@ -1,6 +1,8 @@
+import { ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import {
-  BrowserRouter,
+  // BrowserRouter,
+  HashRouter,
   Navigate,
   Outlet,
   Route,
@@ -9,20 +11,20 @@ import {
 import DataProvider from "./contexts/DataProvider";
 import theme from "./theme/theme";
 // components
+import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
+import { BASE_URL } from "./constants/config";
 import About from "./pages/About";
 import Account from "./pages/Account";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import { ThemeProvider } from "@mui/material";
 import PostDetails from "./pages/PostDetails";
-import { BASE_URL } from "./constants/config";
+import Services from "./pages/Services";
 import Work from "./pages/Work";
-import Footer from "./components/common/Footer";
 import WorkDetails from "./pages/WorkDetails";
+import ServiceDetails from "./components/serviceDetails/ServiceDetails";
 
 const PrivateRoute = (props) => {
   const { isUserAuthenticated } = props;
@@ -51,7 +53,7 @@ function App() {
   return (
     <DataProvider>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route
               path={`${BASE_URL}login`}
@@ -63,6 +65,7 @@ function App() {
               <Route path={`/`} element={<Home />} />
               <Route path={`/about`} element={<About />} />
               <Route path={`/services`} element={<Services />} />
+              <Route path={`/service/:id`} element={<ServiceDetails />} />
               <Route path={`/work`} element={<Work />} />
               <Route path={`/work/:id`} element={<WorkDetails />} />
               <Route path={`/blog`} element={<Blog />} />
@@ -78,7 +81,7 @@ function App() {
               <Route path="/create-post" element={<CreatePost />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </DataProvider>
   );
