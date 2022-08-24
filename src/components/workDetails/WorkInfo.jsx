@@ -29,8 +29,7 @@ const data = [
 
 function WorkInfoAccordion(props) {
   const { expanded, handleChange, item, index } = props;
-  console.log("item", item);
-  console.log("index", index);
+
   return (
     <Accordion
       expanded={expanded === index}

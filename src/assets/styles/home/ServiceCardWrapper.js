@@ -5,7 +5,7 @@ export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
   borderRadius: theme.spacing(0),
   overflow: "hidden",
   "& .service-image-wrapper": {
-    height: 800,
+    height: "auto",
     width: "100%",
     backgroundColor: "#bdbdbd",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
@@ -13,7 +13,7 @@ export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
   "& .service-image": {
     height: "100%",
     width: "100%",
-    objectFit: "cover",
+    objectFit: "stretch",
   },
   "& .service-title-action": {
     position: "absolute",
@@ -44,23 +44,29 @@ export const ServiceCardWrapper = styled(Box)(({ theme }) => ({
       "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.85))",
   },
   [theme.breakpoints.down("xl")]: {
-    "& .service-image-wrapper": {
-      height: 350,
-    },
+    // "& .service-image-wrapper": {
+    //   height: "auto",
+    // },
   },
   [theme.breakpoints.down("lg")]: {
-    "& .service-image-wrapper": {
-      height: 300,
-    },
+    // "& .service-image-wrapper": {
+    //   height: "auto",
+    //   "& img": {
+    //     height: 450,
+    //   },
+    // },
   },
   [theme.breakpoints.down("md")]: {
-    "& .service-image-wrapper": {
-      height: 250,
-    },
+    // "& .service-image-wrapper": {
+    //   height: "auto",
+    // },
   },
   [theme.breakpoints.down("sm")]: {
-    "& .service-image-wrapper": {
-      height: 200,
-    },
+    // "& .service-image-wrapper": {
+    //   height: "auto",
+    //   "& img": {
+    //     height: 250,
+    //   },
+    // },
   },
 }));

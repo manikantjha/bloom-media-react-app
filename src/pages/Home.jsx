@@ -9,12 +9,7 @@ import { home } from "../data/home";
 export default function Home() {
   return (
     <div>
-      <Hero
-        heroImg={home.hero.image}
-        heroTitle={home.hero.title}
-        heroDescription={home.hero.description}
-        noBtn
-      />
+      <Hero heroImg={home.hero.image} noBtn noOverlay />
       <AboutSection />
       <WorkSection />
       <ServicesSection />

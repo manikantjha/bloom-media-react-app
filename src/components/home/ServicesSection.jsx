@@ -34,7 +34,7 @@ export default function ServicesSection() {
             </Typography>
           </SectionTitleWrapper>
           <Grid container spacing={isTablet ? 2 : 4}>
-            {services.slice(0, 3).map((item, index) => (
+            {services.slice(0, isTablet ? 4 : 3).map((item, index) => (
               <Grid item key={index} xs={6} sm={4} md={4} lg={4}>
                 <ServiceCard item={item} index={index} />
               </Grid>

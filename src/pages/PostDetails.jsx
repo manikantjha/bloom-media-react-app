@@ -6,7 +6,6 @@ import { API } from "../services/api";
 function PostDetails() {
   const [post, setPost] = useState();
   const { id } = useParams();
-  console.log("id", id);
   useEffect(() => {
     const fetchPost = async () => {
       const result = await API.getPostById(id);

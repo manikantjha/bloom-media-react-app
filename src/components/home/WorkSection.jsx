@@ -34,7 +34,7 @@ export default function WorkSection() {
             </Typography>
           </SectionTitleWrapper>
           <Grid container spacing={isTablet ? 2 : 4}>
-            {[...Array(3)].map((item, index) => (
+            {[...Array(isTablet ? 4 : 3)].map((item, index) => (
               <Grid item key={index} xs={6} sm={4} md={4} lg={4}>
                 <WorkCard />
               </Grid>

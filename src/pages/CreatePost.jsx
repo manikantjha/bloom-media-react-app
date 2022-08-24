@@ -45,11 +45,11 @@ export default function CreatePost() {
     postState.category = decodeURIComponent(
       location.search?.split("=")[1] || "All"
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [file]);
 
   function handleChange(e) {
     setPostState({ ...postState, [e.target.name]: e.target.value });
-    console.log("postState: ", postState);
   }
 
   async function handlePublish() {

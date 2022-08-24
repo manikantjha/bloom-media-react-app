@@ -5,43 +5,34 @@ import {
   SectionWrapper,
 } from "../../assets/styles/CommonStyles";
 import { AboutWrapper } from "../../assets/styles/home/AboutWrapper";
+import { about } from "../../data/about";
 
-export default function About(props) {
-  const { aboutTitle, aboutShortDescription, aboutDescription } = props;
+export default function About() {
   return (
     <AboutWrapper>
       <SectionWrapper>
         <Container maxWidth="xl">
           <SectionTitleWrapper>
-            <Typography variant="h2" className="title">
-              {aboutTitle}
+            <Typography
+              variant="h2"
+              className="title"
+              sx={{ textAlign: "left !important" }}
+            >
+              {about.title}
             </Typography>
-            <Typography variant="body1" className="short-description">
+            {/* <Typography variant="body1" className="short-description">
               {aboutShortDescription}
-            </Typography>
+            </Typography> */}
           </SectionTitleWrapper>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              {aboutDescription && (
-                <Typography
-                  variant="body1"
-                  color="white"
-                  sx={{ fontSize: "1.25rem" }}
-                >
-                  {aboutDescription}
-                </Typography>
-              )}
-            </Grid>
-            <Grid item xs={12} md={6}>
-              {aboutDescription && (
-                <Typography
-                  variant="body1"
-                  color="white"
-                  sx={{ fontSize: "1.25rem" }}
-                >
-                  {aboutDescription}
-                </Typography>
-              )}
+              <Typography
+                variant="body1"
+                color="white"
+                sx={{ fontSize: "1.25rem" }}
+              >
+                {about.description}
+              </Typography>
             </Grid>
           </Grid>
         </Container>

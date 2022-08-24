@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 import { HeroWrapper } from "../../assets/styles/home/HeroWrapper";
 
 export default function Hero(props) {
-  const { heroTitle, heroDescription, btnText, heroImg, isHome, noBtn } = props;
+  const {
+    heroTitle,
+    heroDescription,
+    btnText,
+    heroImg,
+    isHome,
+    noBtn,
+    noOverlay,
+  } = props;
 
   function renderButton() {
     if (noBtn) return;
     if (isHome)
       return (
-        // <a
-        //   // href="#contact-home"
-        //   style={{ textDecoration: "none" }}
-        // >
         <Button variant="contained" size="large">
           {btnText}
         </Button>
-        // </a>
       );
     return (
       <Link to={`/contact`} style={{ textDecoration: "none" }}>
@@ -31,15 +34,19 @@ export default function Hero(props) {
   return (
     <HeroWrapper>
       <img className="home-hero" src={heroImg} alt="hero" />
-      <Box className="image-overlay" />
+      {!noOverlay && <Box className="image-overlay" />}
       <Container maxWidth="xl">
         <Box className="hero-message">
-          <Typography variant="h2" className="messageTitle">
-            {heroTitle}
-          </Typography>
-          <Typography variant="body1" className="messageDescription">
-            {heroDescription}
-          </Typography>
+          {!!heroTitle && (
+            <Typography variant="h2" className="messageTitle">
+              {heroTitle}
+            </Typography>
+          )}
+          {!!heroDescription && (
+            <Typography variant="body1" className="messageDescription">
+              {heroDescription}
+            </Typography>
+          )}
           {renderButton()}
         </Box>
       </Container>

@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ServiceDetailsWrapper } from "../../assets/styles/serviceDetails/ServiceDetailsWrapper";
 import { services } from "../../data/services";
 import BloomButton from "../common/BloomButton";
@@ -8,8 +8,6 @@ import BloomButton from "../common/BloomButton";
 export default function ServiceDetails() {
   const params = useParams();
   const service = services[params.id];
-
-  console.log("service", service);
 
   return (
     <ServiceDetailsWrapper>
@@ -29,7 +27,16 @@ export default function ServiceDetails() {
             <Typography variant="body1" className="serviceDescription">
               {service.description}
             </Typography>
-            <BloomButton sx={{ mt: 4 }}>Let's Talk</BloomButton>
+            <Link
+              to="/contact"
+              style={{
+                textDecoration: "none",
+                "&:active": { color: "white" },
+                "&:visited": { color: "white" },
+              }}
+            >
+              <BloomButton sx={{ mt: 4 }}>Let's Talk</BloomButton>
+            </Link>
           </Grid>
         </Grid>
       </Container>
