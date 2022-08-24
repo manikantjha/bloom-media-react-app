@@ -14,9 +14,11 @@ export default function ServiceDetails() {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12}>
-            <Typography variant="h2" className="serviceTitle">
-              {service.title}
-            </Typography>
+            <Box sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}>
+              <Typography variant="h2" className="serviceTitle" maxWidth="100%">
+                {service.title}
+              </Typography>
+            </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box className="serviceImageWrapper">

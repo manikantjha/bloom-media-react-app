@@ -24,11 +24,15 @@ export const ServiceDetailsWrapper = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
+    "& .serviceTitle": {
+      fontWeight: "bold",
+      fontSize: "3rem",
+    },
     "& .serviceImageWrapper": {
-      height: 400,
+      height: "auto",
       "& img": {
-        height: 400,
-        width: "auto",
+        height: "auto",
+        width: "100%",
       },
     },
   },
