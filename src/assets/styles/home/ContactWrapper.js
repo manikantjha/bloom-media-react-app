@@ -2,6 +2,7 @@ import { Box, styled } from "@mui/material";
 
 export const ContactWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#424242",
+  // backgroundColor: "#f0f0f0",
   padding: theme.spacing(4),
   "& .form-wrapper": {
     display: "flex",
