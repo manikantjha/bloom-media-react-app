@@ -58,6 +58,7 @@ export default function QuickContact() {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm({ resolver: yupResolver(schema) });
 
   const form = useRef();
@@ -74,12 +75,15 @@ export default function QuickContact() {
       )
       .then(
         (result) => {
+          window.alert("Email Submitted Successfully");
           console.log(result.text);
         },
         (error) => {
+          window.alert("Failed to Submit Email");
           console.log(error.text);
         }
       );
+    reset();
   }
 
   return (
