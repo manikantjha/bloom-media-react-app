@@ -22,7 +22,7 @@ export default function Team() {
         <Container maxWidth="xl">
           <SectionTitleWrapper sx={{ mt: `0px !important` }}>
             <Typography variant="h2" className="title">
-              Meet Our Team
+              MEET OUR TEAM
             </Typography>
             <Typography variant="body1" className="short-description">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum,

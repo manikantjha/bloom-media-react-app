@@ -14,10 +14,10 @@ import {
   SectionWrapper,
 } from "../../assets/styles/CommonStyles";
 import { ServicesWrapper } from "../../assets/styles/home/ServicesWrapper";
-import { BASE_URL } from "../../constants/config";
+import { services } from "../../data/services";
 import ServiceCard from "./ServiceCard";
 
-export default function Services() {
+export default function ServicesSection() {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -26,7 +26,7 @@ export default function Services() {
         <Container maxWidth="xl">
           <SectionTitleWrapper>
             <Typography variant="h2" className="title">
-              Services
+              OUR SERVICES
             </Typography>
             <Typography variant="body1" className="short-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
@@ -34,17 +34,14 @@ export default function Services() {
             </Typography>
           </SectionTitleWrapper>
           <Grid container spacing={isTablet ? 2 : 4}>
-            {[...Array(4)].map((item, index) => (
-              <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
+            {services.slice(0, isTablet ? 4 : 3).map((item, index) => (
+              <Grid item key={index} xs={6} sm={4} md={4} lg={4}>
                 <ServiceCard item={item} index={index} />
               </Grid>
             ))}
             <Grid item xs={12}>
               <BtnWrapper>
-                <Link
-                  to={`${BASE_URL}/services`}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to={`/services`} style={{ textDecoration: "none" }}>
                   <Button variant="contained" size="large">
                     See All
                   </Button>

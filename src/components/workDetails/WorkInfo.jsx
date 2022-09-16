@@ -29,19 +29,18 @@ const data = [
 
 function WorkInfoAccordion(props) {
   const { expanded, handleChange, item, index } = props;
-  console.log("item", item);
-  console.log("index", index);
+
   return (
     <Accordion
       expanded={expanded === index}
       onChange={handleChange(index)}
       sx={{
-        bgcolor: "#232020",
+        bgcolor: "#424242",
         border: "none",
-        borderTopLeftRadius: `16px !important`,
-        borderTopRightRadius: `16px !important`,
-        borderBottomLeftRadius: `16px !important`,
-        borderBottomRightRadius: `16px !important`,
+        borderTopLeftRadius: `0px !important`,
+        borderTopRightRadius: `0px !important`,
+        borderBottomLeftRadius: `0px !important`,
+        borderBottomRightRadius: `0px !important`,
         color: "white",
         mb: 2,
       }}
@@ -51,10 +50,10 @@ function WorkInfoAccordion(props) {
       </AccordionSummary>
       <AccordionDetails
         sx={{
-          bgcolor: "#232020",
+          bgcolor: "#424242",
           color: "#ffffff",
-          borderBottomLeftRadius: `16px !important`,
-          borderBottomRightRadius: `16px !important`,
+          borderBottomLeftRadius: `0px !important`,
+          borderBottomRightRadius: `0px !important`,
         }}
       >
         <Typography variant="body1">{item.description}</Typography>

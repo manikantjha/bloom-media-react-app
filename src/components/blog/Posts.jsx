@@ -8,7 +8,6 @@ export default function Posts() {
   const [posts, setPosts] = useState([]);
   const [params] = useSearchParams();
   const category = params.get("category");
-  console.log("category", category);
 
   useEffect(() => {
     const fetchPosts = async () => {

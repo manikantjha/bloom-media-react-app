@@ -14,10 +14,10 @@ import {
   SectionWrapper,
 } from "../../assets/styles/CommonStyles";
 import { WorkWrapper } from "../../assets/styles/home/WorkWrapper";
-import { BASE_URL } from "../../constants/config";
+// import { BASE_URL } from "../../constants/config";
 import WorkCard from "./WorkCard";
 
-export default function Work() {
+export default function WorkSection() {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -26,7 +26,7 @@ export default function Work() {
         <Container maxWidth="xl">
           <SectionTitleWrapper>
             <Typography variant="h2" className="title">
-              Our Work
+              OUR WORK
             </Typography>
             <Typography variant="body1" className="short-description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque,
@@ -34,17 +34,14 @@ export default function Work() {
             </Typography>
           </SectionTitleWrapper>
           <Grid container spacing={isTablet ? 2 : 4}>
-            {[...Array(4)].map((item, index) => (
-              <Grid item key={index} xs={6} sm={4} md={4} lg={3}>
+            {[...Array(isTablet ? 4 : 3)].map((item, index) => (
+              <Grid item key={index} xs={6} sm={4} md={4} lg={4}>
                 <WorkCard />
               </Grid>
             ))}
             <Grid item xs={12}>
               <BtnWrapper>
-                <Link
-                  to={`${BASE_URL}/work`}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to={`/work`} style={{ textDecoration: "none" }}>
                   <Button variant="contained" size="large">
                     See All
                   </Button>

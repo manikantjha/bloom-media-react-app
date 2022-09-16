@@ -2,10 +2,10 @@ import { Box, styled } from "@mui/material";
 
 export const WorkCardWrapper = styled(Box)(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.spacing(2),
+  borderRadius: theme.spacing(0),
   overflow: "hidden",
   "& .work-image-wrapper": {
-    height: 400,
+    height: 500,
     width: "100%",
     backgroundColor: "#bdbdbd",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",

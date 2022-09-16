@@ -14,14 +14,14 @@ import {
 } from "../../assets/styles/CommonStyles";
 import { ContactWrapper } from "../../assets/styles/home/ContactWrapper";
 
-export default function Contact() {
+export default function ContactSection() {
   return (
     <ContactWrapper id="contact-home">
       <SectionWrapper>
         <Container maxWidth="md">
           <SectionTitleWrapper>
             <Typography variant="h2" className="title">
-              Contact Us
+              CONTACT US
             </Typography>
             <Typography variant="body1" className="short-description">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum,

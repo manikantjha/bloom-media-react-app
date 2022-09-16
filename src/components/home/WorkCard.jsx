@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import { WorkCardWrapper } from "../../assets/styles/home/WorkCardWrapper";
 
 export default function WorkCard(props) {
-  const { item, index } = props;
+  const {
+    // item,
+    index,
+  } = props;
   return (
     <WorkCardWrapper>
       <Box className="work-image-wrapper">
@@ -16,7 +19,14 @@ export default function WorkCard(props) {
       </Box>
       <Box className="overlay" />
       <Box className="work-title-action">
-        <Typography variant="h6" noWrap>
+        <Typography
+          variant="h5"
+          noWrap
+          sx={{
+            fontSize: { xs: "1rem", md: "2rem" },
+            fontWeight: { xs: "bold", md: "normal" },
+          }}
+        >
           Work Title Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           Ipsa, rem!
         </Typography>

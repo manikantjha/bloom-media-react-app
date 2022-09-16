@@ -5,7 +5,7 @@ export const TeamMemberWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#212121",
   width: "100%",
   padding: theme.spacing(4),
-  borderRadius: theme.spacing(2),
+  borderRadius: theme.spacing(0),
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
