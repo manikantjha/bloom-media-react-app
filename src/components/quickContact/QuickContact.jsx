@@ -251,20 +251,20 @@ export default function QuickContact() {
                               name={name}
                               inputProps={{ sx: { color: "#f0f0f0" } }}
                             >
-                              <MenuItem value={"Less than 10,000"}>
-                                Less than 10,000
+                              <MenuItem value={"Less than ₹10,000"}>
+                                Less than ₹10,000
                               </MenuItem>
-                              <MenuItem value={"10,000 - 25,000"}>
-                                10,000 - 25,000
+                              <MenuItem value={"₹10,000 - ₹25,000"}>
+                                ₹10,000 - ₹25,000
                               </MenuItem>
-                              <MenuItem value={"25,000 - 50,000"}>
-                                25,000 - 50,000
+                              <MenuItem value={"₹25,000 - ₹50,000"}>
+                                ₹25,000 - ₹50,000
                               </MenuItem>
-                              <MenuItem value={"50,000 - 100,000"}>
-                                50,000 - 100,000
+                              <MenuItem value={"₹50,000 - ₹100,000"}>
+                                ₹50,000 - ₹100,000
                               </MenuItem>
-                              <MenuItem value={"More than 100,000"}>
-                                More than 100,000
+                              <MenuItem value={"More than ₹100,000"}>
+                                More than ₹100,000
                               </MenuItem>
                             </Select>
                             {errors.budget && (
