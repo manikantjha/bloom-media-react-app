@@ -32,7 +32,7 @@ export default function Hero(props) {
   }
 
   return (
-    <HeroWrapper>
+    <HeroWrapper sx={props.imgProps ? { ...props.imgProps } : {}}>
       <img className="home-hero" src={heroImg} alt="hero" />
       {!noOverlay && <Box className="image-overlay" />}
       <Container maxWidth="xl">
@@ -47,7 +47,7 @@ export default function Hero(props) {
               {heroDescription}
             </Typography>
           )}
-          {renderButton()}
+          {props.renderButton ? props.renderButton() : renderButton()}
         </Box>
       </Container>
     </HeroWrapper>

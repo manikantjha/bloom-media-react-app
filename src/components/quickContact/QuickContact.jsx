@@ -1,30 +1,33 @@
+import emailjs from "@emailjs/browser";
+import { yupResolver } from "@hookform/resolvers/yup";
+import CancelIcon from "@mui/icons-material/Cancel";
 import {
   Box,
   Button,
   Checkbox,
   Container,
+  Dialog,
   FormControl,
   FormControlLabel,
   FormHelperText,
   Grid,
+  IconButton,
   InputLabel,
   MenuItem,
   Select,
   TextField,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
+import { Controller, useForm } from "react-hook-form";
+import * as yup from "yup";
 import {
   BtnWrapper,
   SectionTitleWrapper,
   SectionWrapper,
 } from "../../assets/styles/CommonStyles";
-import emailjs from "@emailjs/browser";
-import { Controller, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { ContactWrapper } from "../../assets/styles/home/ContactWrapper";
-import { useRef } from "react";
 
 const schema = yup
   .object({
@@ -47,19 +50,26 @@ const schema = yup
     design: yup.boolean(),
     logo: yup.boolean(),
     naming: yup.boolean(),
+    event: yup.boolean(),
     other: yup.boolean(),
-    budget: yup.string().required("Budget is required"),
+    budget: yup.string(),
   })
   .required();
 
-export default function QuickContact() {
+export default function QuickContact(props) {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
     reset,
+    getValues,
+    watch,
   } = useForm({ resolver: yupResolver(schema) });
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+  // eslint-disable-next-line no-unused-vars
+  const watchEvent = watch("event", false);
 
   const form = useRef();
 
@@ -68,10 +78,10 @@ export default function QuickContact() {
     console.log("form", form);
     emailjs
       .sendForm(
-        "service_5g5sfca",
-        "template_21zh9kp",
+        "service_fvzxzt3",
+        "template_waj772u",
         form.current,
-        "cLinWhNUqZbIpCAga"
+        "5iCOSOEZdrCtxyNiJ"
       )
       .then(
         (result) => {
@@ -84,22 +94,43 @@ export default function QuickContact() {
         }
       );
     reset();
+    props.toggle();
   }
 
   return (
-    <div>
+    <Dialog
+      onClose={props.toggle}
+      open={props.open}
+      fullScreen={isMobile ? true : false}
+      sx={{ borderRadius: "24px !important" }}
+    >
       <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         <ContactWrapper id="contact-home">
-          <SectionWrapper>
+          <SectionWrapper sx={{ pt: 0, pb: 0 }}>
             <Container maxWidth="md">
-              <SectionTitleWrapper sx={{ mb: 6 }}>
+              <SectionTitleWrapper
+                sx={{
+                  mb: 6,
+                  mt: 0,
+                  display: "flex",
+                  alignItems: "center !important",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Typography
                   variant="h2"
                   className="title"
-                  sx={{ color: "#f0f0f0 !important" }}
+                  sx={{
+                    color: "#f0f0f0 !important",
+                    textAlign: "left !important",
+                    mb: "0px !important",
+                  }}
                 >
-                  Contact Us
+                  Register
                 </Typography>
+                <IconButton onClick={props.toggle}>
+                  <CancelIcon sx={{ color: "#eeeeee" }} fontSize="large" />
+                </IconButton>
               </SectionTitleWrapper>
               <Box className="form-wrapper">
                 <Box className="form-inner-wrapper">
@@ -173,7 +204,7 @@ export default function QuickContact() {
                         inputProps={{ sx: { color: "#f0f0f0" } }}
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={6}>
                       <Box sx={{ display: "flex", flexDirection: "column" }}>
                         <FormControlLabel
                           control={
@@ -205,6 +236,10 @@ export default function QuickContact() {
                           label="Content"
                           sx={{ color: "#f0f0f0" }}
                         />
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Box sx={{ display: "flex", flexDirection: "column" }}>
                         <FormControlLabel
                           control={<Checkbox {...register("design")} />}
                           label="Design"
@@ -221,61 +256,68 @@ export default function QuickContact() {
                           sx={{ color: "#f0f0f0" }}
                         />
                         <FormControlLabel
+                          control={<Checkbox {...register("event")} />}
+                          label="Event"
+                          sx={{ color: "#f0f0f0" }}
+                        />
+                        <FormControlLabel
                           control={<Checkbox {...register("other")} />}
                           label="Other"
                           sx={{ color: "#f0f0f0" }}
                         />
                       </Box>
                     </Grid>
-                    <Grid item xs={12}>
-                      <Controller
-                        control={control}
-                        name="budget"
-                        render={({
-                          field: { onChange, onBlur, value, name, ref },
-                          fieldState: { invalid, isTouched, isDirty, error },
-                          formState,
-                        }) => (
-                          <FormControl fullWidth>
-                            <InputLabel
-                              id="budget-select"
-                              sx={{ color: "#bdbdbd" }}
-                            >
-                              Budget
-                            </InputLabel>
-                            <Select
-                              labelId="budget-select"
-                              label="Budget"
-                              value={value}
-                              onChange={onChange}
-                              name={name}
-                              inputProps={{ sx: { color: "#f0f0f0" } }}
-                            >
-                              <MenuItem value={"Less than ₹10,000"}>
-                                Less than ₹10,000
-                              </MenuItem>
-                              <MenuItem value={"₹10,000 - ₹25,000"}>
-                                ₹10,000 - ₹25,000
-                              </MenuItem>
-                              <MenuItem value={"₹25,000 - ₹50,000"}>
-                                ₹25,000 - ₹50,000
-                              </MenuItem>
-                              <MenuItem value={"₹50,000 - ₹100,000"}>
-                                ₹50,000 - ₹100,000
-                              </MenuItem>
-                              <MenuItem value={"More than ₹100,000"}>
-                                More than ₹100,000
-                              </MenuItem>
-                            </Select>
-                            {errors.budget && (
-                              <FormHelperText error>
-                                {errors.budget?.message}
-                              </FormHelperText>
-                            )}
-                          </FormControl>
-                        )}
-                      />
-                    </Grid>
+                    {!getValues("event") && (
+                      <Grid item xs={12}>
+                        <Controller
+                          control={control}
+                          name="budget"
+                          render={({
+                            field: { onChange, onBlur, value, name, ref },
+                            fieldState: { invalid, isTouched, isDirty, error },
+                            formState,
+                          }) => (
+                            <FormControl fullWidth>
+                              <InputLabel
+                                id="budget-select"
+                                sx={{ color: "#bdbdbd" }}
+                              >
+                                Budget
+                              </InputLabel>
+                              <Select
+                                labelId="budget-select"
+                                label="Budget"
+                                value={value}
+                                onChange={onChange}
+                                name={name}
+                                inputProps={{ sx: { color: "#f0f0f0" } }}
+                              >
+                                <MenuItem value={"Less than ₹10,000"}>
+                                  Less than ₹10,000
+                                </MenuItem>
+                                <MenuItem value={"₹10,000 - ₹25,000"}>
+                                  ₹10,000 - ₹25,000
+                                </MenuItem>
+                                <MenuItem value={"₹25,000 - ₹50,000"}>
+                                  ₹25,000 - ₹50,000
+                                </MenuItem>
+                                <MenuItem value={"₹50,000 - ₹100,000"}>
+                                  ₹50,000 - ₹100,000
+                                </MenuItem>
+                                <MenuItem value={"More than ₹100,000"}>
+                                  More than ₹100,000
+                                </MenuItem>
+                              </Select>
+                              {errors.budget && (
+                                <FormHelperText error>
+                                  {errors.budget?.message}
+                                </FormHelperText>
+                              )}
+                            </FormControl>
+                          )}
+                        />
+                      </Grid>
+                    )}
                     <Grid item xs={12}>
                       <BtnWrapper>
                         <Button variant="contained" size="large" type="submit">
@@ -290,6 +332,6 @@ export default function QuickContact() {
           </SectionWrapper>
         </ContactWrapper>
       </form>
-    </div>
+    </Dialog>
   );
 }
