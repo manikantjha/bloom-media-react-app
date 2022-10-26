@@ -11,7 +11,7 @@ export default function Login(props) {
     password: "",
   };
   const [login, setLogin] = useState(initialLoginState);
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const { setAccount } = useContext(DataContext);
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function Login(props) {
     let response = await API.userLogin(login);
 
     if (response?.isSuccess) {
-      setError("");
+      // setError("");
       sessionStorage.setItem(
         "accessToken",
         `Bearer ${response.data.accessToken}`
@@ -41,7 +41,7 @@ export default function Login(props) {
       setIsUserAuthenticated(true);
       navigate("/");
     } else {
-      setError("Oops! Something went wrong.");
+      // setError("Oops! Something went wrong.");
     }
   };
 

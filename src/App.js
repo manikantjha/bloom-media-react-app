@@ -1,29 +1,20 @@
 import { ThemeProvider } from "@mui/material";
-import { useState } from "react";
-import {
-  HashRouter,
-  Outlet,
-  Route,
-  Routes,
-  // Navigate,
-} from "react-router-dom";
-import DataProvider from "./contexts/DataProvider";
-import theme from "./theme/theme";
-// components
-import Footer from "./components/common/Footer";
-import Navbar from "./components/common/Navbar";
-import Account from "./pages/Account";
+import { HashRouter, Outlet, Route, Routes } from "react-router-dom";
+import FooterNew from "./components/commonNew/Footer";
+import NavbarNew from "./components/commonNew/Navbar";
+import ServiceDetailNew from "./components/serviceDetailNew/ServiceDetailNew";
 import { BASE_URL } from "./constants/config";
-import ComingSoon from "./pages/ComingSoon";
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Blog from "./pages/Blog";
-// import Contact from "./pages/Contact";
-// import CreatePost from "./pages/CreatePost";
-// import Services from "./pages/Services";
-// import PostDetails from "./pages/PostDetails";
-// import Work from "./pages/Work";
-// import WorkDetails from "./pages/WorkDetails";
+import DataProvider from "./contexts/DataProvider";
+import AboutUsNew from "./pages/AboutUs";
+import Account from "./pages/Account";
+import ConciousCreativeCommunity from "./pages/ConciousCreativeCommunity";
+import ContactNew from "./pages/ContactNew";
+import HomeNew from "./pages/HomeNew";
+import ServicesNew from "./pages/ServicesNew";
+import WorkDetail from "./pages/WorkDetail";
+import WorkNew from "./pages/WorkNew";
+import ScrollToTop from "./services/ScrollToTop";
+import theme from "./theme/theme";
 
 // const PrivateRoute = (props) => {
 //   const { isUserAuthenticated } = props;
@@ -40,35 +31,39 @@ import ComingSoon from "./pages/ComingSoon";
 const PublicRoute = (props) => {
   return (
     <>
-      <Navbar />
+      <NavbarNew />
       <Outlet />
-      <Footer />
+      <FooterNew />
     </>
   );
 };
 
 function App() {
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
+  // const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
   return (
     <DataProvider>
       <ThemeProvider theme={theme}>
         <HashRouter>
+          <ScrollToTop />
           <Routes>
             <Route
               path={`${BASE_URL}login`}
-              element={
-                <Account setIsUserAuthenticated={setIsUserAuthenticated} />
-              }
+              element={<Account setIsUserAuthenticated={() => {}} />}
             />
             <Route path={`/`} element={<PublicRoute />}>
-              <Route path={`/`} element={<ComingSoon />} />
-              {/* <Route path={`/about`} element={<About />} />
-              <Route path={`/services`} element={<Services />} />
-              <Route path={`/service/:id`} element={<ServiceDetails />} />
-              <Route path={`/work`} element={<Work />} />
-              <Route path={`/work/:id`} element={<WorkDetails />} />
+              <Route path={`/`} element={<HomeNew />} />
+              <Route path={`/about`} element={<AboutUsNew />} />
+              <Route path={`/services`} element={<ServicesNew />} />
+              <Route path={`/service/:id`} element={<ServiceDetailNew />} />
+              <Route path={`/work`} element={<WorkNew />} />
+              <Route path={`/work/:id`} element={<WorkDetail />} />
+              <Route
+                path={`/concious-creative-community`}
+                element={<ConciousCreativeCommunity />}
+              />
+              <Route path={`/contact`} element={<ContactNew />} />
+              {/*
               <Route path={`/blog`} element={<Blog />} />
-              <Route path={`/contact`} element={<Contact />} />
               <Route path={`/post/:id`} element={<PostDetails />} /> */}
             </Route>
             {/* <Route

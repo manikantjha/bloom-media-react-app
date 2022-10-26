@@ -1,29 +1,29 @@
 import emailjs from "@emailjs/browser";
 import { yupResolver } from "@hookform/resolvers/yup";
-import CancelIcon from "@mui/icons-material/Cancel";
+// import CancelIcon from "@mui/icons-material/Cancel";
 import {
   Box,
   Button,
   Checkbox,
   Container,
-  Dialog,
+  // Dialog,
   FormControl,
   FormControlLabel,
   FormHelperText,
   Grid,
-  IconButton,
+  // IconButton,
   InputLabel,
   MenuItem,
   Select,
   TextField,
   Typography,
-  useMediaQuery,
+  // useMediaQuery,
 } from "@mui/material";
 import React, { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import {
-  BtnWrapper,
+  // BtnWrapper,
   SectionTitleWrapper,
   SectionWrapper,
 } from "../../assets/styles/CommonStyles";
@@ -66,7 +66,7 @@ export default function QuickContact(props) {
     getValues,
     watch,
   } = useForm({ resolver: yupResolver(schema) });
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  // const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   // eslint-disable-next-line no-unused-vars
   const watchEvent = watch("event", false);
@@ -74,8 +74,6 @@ export default function QuickContact(props) {
   const form = useRef();
 
   function onSubmit(data) {
-    console.log(data);
-    console.log("form", form);
     emailjs
       .sendForm(
         "service_fvzxzt3",
@@ -86,11 +84,9 @@ export default function QuickContact(props) {
       .then(
         (result) => {
           window.alert("Email Submitted Successfully");
-          console.log(result.text);
         },
         (error) => {
           window.alert("Failed to Submit Email");
-          console.log(error.text);
         }
       );
     reset();
@@ -98,15 +94,16 @@ export default function QuickContact(props) {
   }
 
   return (
-    <Dialog
-      onClose={props.toggle}
-      open={props.open}
-      fullScreen={isMobile ? true : false}
-      sx={{ borderRadius: "24px !important" }}
-    >
+    // <Dialog
+    //   onClose={props.toggle}
+    //   open={props.open}
+    //   fullScreen={isMobile ? true : false}
+    //   sx={{ borderRadius: "24px !important" }}
+    // >
+    <Box>
       <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         <ContactWrapper id="contact-home">
-          <SectionWrapper sx={{ pt: 0, pb: 0 }}>
+          <SectionWrapper sx={{ pt: 4, pb: 4 }}>
             <Container maxWidth="md">
               <SectionTitleWrapper
                 sx={{
@@ -126,11 +123,11 @@ export default function QuickContact(props) {
                     mb: "0px !important",
                   }}
                 >
-                  Register
+                  Get In Touch
                 </Typography>
-                <IconButton onClick={props.toggle}>
-                  <CancelIcon sx={{ color: "#eeeeee" }} fontSize="large" />
-                </IconButton>
+                {/* <IconButton onClick={props.toggle}>
+                <CancelIcon sx={{ color: "#eeeeee" }} fontSize="large" />
+              </IconButton> */}
               </SectionTitleWrapper>
               <Box className="form-wrapper">
                 <Box className="form-inner-wrapper">
@@ -319,11 +316,11 @@ export default function QuickContact(props) {
                       </Grid>
                     )}
                     <Grid item xs={12}>
-                      <BtnWrapper>
-                        <Button variant="contained" size="large" type="submit">
-                          Submit
-                        </Button>
-                      </BtnWrapper>
+                      {/* <BtnWrapper> */}
+                      <Button variant="contained" size="large" type="submit">
+                        Submit
+                      </Button>
+                      {/* </BtnWrapper> */}
                     </Grid>
                   </Grid>
                 </Box>
@@ -332,6 +329,7 @@ export default function QuickContact(props) {
           </SectionWrapper>
         </ContactWrapper>
       </form>
-    </Dialog>
+    </Box>
+    // </Dialog>
   );
 }

@@ -71,3 +71,13 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
     paddingBottom: theme.spacing(5),
   },
 }));
+
+export const SectionWrapperNew = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(10),
+
+  [theme.breakpoints.down("md")]: {
+    padding: `${theme.spacing(5)} ${theme.spacing(2.5)} ${theme.spacing(
+      5
+    )} ${theme.spacing(2.5)}`,
+  },
+}));
