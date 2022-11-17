@@ -1,12 +1,18 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getFooterColor } from "../../../utils/footerColor";
 
 export default function NavbarNewLogo() {
   const path = useLocation();
+  const navigate = useNavigate();
   return (
-    <Box>
+    <Box
+      sx={{ "&:hover": { cursor: "pointer" } }}
+      onClick={() => {
+        navigate("/");
+      }}
+    >
       <svg
         version="1.1"
         id="Layer_1"

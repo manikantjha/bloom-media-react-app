@@ -8,17 +8,22 @@ export default function ServiceDetailNew() {
   const { id } = useParams();
   const navigate = useNavigate();
   return (
-    <Box sx={{ bgcolor: "#212121" }}>
+    <Box sx={{ bgcolor: "#424242", mt: "64px", pb: "80px" }}>
       <Container maxWidth="xl">
         <Hidden mdDown>
           <Box sx={{ py: 8 }}>
             <Grid container spacing={2}>
               {serviceImgs.map((img, index) => (
-                <Grid key={`${index} ${img[1]}`} item xs={12} md={3}>
+                <Grid
+                  key={`${index} ${img[1]} ${Math.random()}`}
+                  item
+                  xs={12}
+                  md={3}
+                >
                   <Button
                     variant="contained"
                     fullWidth
-                    sx={{ bgcolor: "#424242" }}
+                    sx={{ bgcolor: "#212121" }}
                     onClick={() => {
                       navigate(`/service/${index}`);
                     }}
@@ -35,8 +40,18 @@ export default function ServiceDetailNew() {
           <Grid item xs={12}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
-                <Box sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
-                  <img src={serviceImgs[id][0]} alt="" />
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: { xs: 290, md: 600 },
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={serviceImgs[id][0]}
+                    alt=""
+                    style={{ height: "100%", objectFit: "cover" }}
+                  />
                 </Box>
               </Grid>
               <Grid item xs={12} md={8}>

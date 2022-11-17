@@ -23,11 +23,11 @@ export default function NavbarNew() {
   return (
     <Box>
       <AppBar
-        position="sticky"
+        position="fixed"
         sx={{
           bgcolor: theme.palette.secondary.main,
           color: `${theme.palette.primary.main} !important`,
-          zIndex: 100,
+          zIndex: 1000,
         }}
       >
         <Container maxWidth="xl">

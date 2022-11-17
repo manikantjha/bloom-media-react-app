@@ -9,7 +9,7 @@ export default function HomeNewRowThree() {
     <SectionWrapperNew
       sx={{
         position: "relative",
-        height: { xs: "300px", md: "1105px" },
+        height: { xs: "40vh", md: "70vh" },
         width: "auto",
         overflow: "hidden",
       }}

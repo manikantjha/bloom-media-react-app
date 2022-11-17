@@ -62,11 +62,20 @@ export default function HomeNewRowFive() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -103,7 +112,7 @@ export default function HomeNewRowFive() {
             <div key={index}>
               <Box
                 sx={{
-                  height: { xs: 391, md: 782 },
+                  height: { xs: 391, md: 600 },
                   width: "auto",
                   overflow: "hidden",
                   mx: 2,
@@ -119,7 +128,7 @@ export default function HomeNewRowFive() {
                   style={{
                     height: "100%",
                     width: "100%",
-                    objectFit: "cover",
+                    objectFit: "contain",
                   }}
                 />
               </Box>
