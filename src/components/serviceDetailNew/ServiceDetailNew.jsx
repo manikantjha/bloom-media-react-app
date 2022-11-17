@@ -8,7 +8,7 @@ export default function ServiceDetailNew() {
   const { id } = useParams();
   const navigate = useNavigate();
   return (
-    <Box sx={{ bgcolor: "#424242", mt: "64px", pb: "80px" }}>
+    <Box sx={{ bgcolor: "#424242", pb: "80px" }}>
       <Container maxWidth="xl">
         <Hidden mdDown>
           <Box sx={{ py: 8 }}>

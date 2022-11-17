@@ -46,6 +46,7 @@ export default function NavbarNew() {
           </Toolbar>
         </Container>
       </AppBar>
+      <Toolbar />
     </Box>
   );
 }
