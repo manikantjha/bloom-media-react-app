@@ -4,6 +4,50 @@ import React from "react";
 import { SectionWrapperNew } from "../../assets/styles/CommonStyles";
 
 export default function AboutUsRowThree() {
+  const arrTeam = [
+    {
+      id: 0,
+      name: "MJ",
+      designation: "Principal",
+      url: "/assets/images/team/member_01.png",
+    },
+    {
+      id: 1,
+      name: "Priya",
+      designation: "Creative Director",
+      url: "/assets/images/team/member_02.png",
+    },
+    {
+      id: 2,
+      name: "Neeraj",
+      designation: "Senior Designer",
+      url: "/assets/images/team/member_03.png",
+    },
+    {
+      id: 3,
+      name: "Ayaz",
+      designation: "Creative Starategist",
+      url: "/assets/images/team/member_04.png",
+    },
+    {
+      id: 4,
+      name: "Aayushi",
+      designation: "Social Media Analyst",
+      url: "/assets/images/team/member_05.png",
+    },
+    {
+      id: 5,
+      name: "Anushka",
+      designation: "Designer & Copywriter",
+      url: "/assets/images/team/member_06.png",
+    },
+    {
+      id: 6,
+      name: "Punit",
+      designation: "Designer",
+      url: "/assets/images/team/member_07.png",
+    },
+  ];
   return (
     <SectionWrapperNew sx={{ bgcolor: "#424242", p: 10 }}>
       <Container maxWidth="xl">
@@ -22,8 +66,8 @@ export default function AboutUsRowThree() {
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={2}>
-              {[...Array(6)].map((_, index) => (
-                <Grid item xs={12} md={6} key={index}>
+              {arrTeam.map((member, index) => (
+                <Grid item xs={12} md={6} key={member.id}>
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Box
                       sx={{
@@ -35,8 +79,8 @@ export default function AboutUsRowThree() {
                       }}
                     >
                       <img
-                        src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Clipart.png"
-                        alt=""
+                        src={member.url}
+                        alt={member.name}
                         style={{
                           height: "100%",
                           width: "100%",
@@ -46,10 +90,10 @@ export default function AboutUsRowThree() {
                     </Box>
                     <Box sx={{ ml: 2 }}>
                       <Typography sx={{ fontWeight: "bold", color: "white" }}>
-                        Dhavl Patel
+                        {member.name}
                       </Typography>
                       <Typography sx={{ fontWeight: "normal", color: "white" }}>
-                        Sr. Animator
+                        {member.designation}
                       </Typography>
                     </Box>
                   </Box>
